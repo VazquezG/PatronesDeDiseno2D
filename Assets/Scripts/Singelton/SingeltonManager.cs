@@ -5,7 +5,7 @@ using UnityEngine;
 public class SingeltonManager : MonoBehaviour
 {
     public static SingeltonManager Instance { get; private set; }
-    Camera cam;
+    public Camera cam;
     private void Awake()
     {
         if (Instance == null && Instance != this)
@@ -16,28 +16,12 @@ public class SingeltonManager : MonoBehaviour
         { 
             Instance = this;
         }
-        cam = FindAnyObjectByType<Camera>();
+        //cam = FindAnyObjectByType<Camera>();
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+   
     public void changeCameraUp()
     {
-        cam.transform.position = new Vector3(cam.transform.position.x + 17, cam.transform.position.y, 0);
+        cam.transform.position = new Vector3(cam.transform.position.x + 17, cam.transform.position.y, -10);
     }
-
-    public void changeCameraDown()
-    {
-        cam.transform.position = new Vector3(cam.transform.position.x - 17, cam.transform.position.y, 0);
-    }
-
+    //esta funcion hace que la camara cambie para ajustarce a donde esta el jugador en el mapa
 }
