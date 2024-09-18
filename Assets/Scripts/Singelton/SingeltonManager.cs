@@ -16,7 +16,7 @@ public class SingeltonManager : MonoBehaviour
         { 
             Instance = this;
         }
-        //cam = FindAnyObjectByType<Camera>();
+        //Esto hace que solo exista un singelton y que sea el el mismo singelton si es algun otro lo destruye
     }
    
     public void changeCameraUp()
